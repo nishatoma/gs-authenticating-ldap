@@ -161,7 +161,24 @@ it is useful for testing purposes or guides.
 If you visit the site at http://localhost:8080, you should be redirected to a login page
 provided by Spring Security.
 
-Enter a user name of `ben` and a password of `benspassword`. You should see the following
+Enter a user name of `ben` and a password of `benspassword`.
+
+NOTE: You need to now add some properties in your `application.properties` file to
+properly setup LDAP. Add the following lines to your `application.properties`:
+
+
+====
+[source,text]
+----
+spring.ldap.embedded.port=8389
+spring.ldap.embedded.ldif=classpath:test-server.ldif
+spring.ldap.embedded.base-dn=dc=springframework,dc=org
+----
+====
+
+
+
+You should see the following
 message in your browser:
 
 ====
